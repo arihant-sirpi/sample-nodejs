@@ -3,11 +3,6 @@ pipeline {
     
   stages {
         
-    stage('Git') {
-      steps {
-        git 'git@github.com:arihant-sirpi/sample-nodejs.git'
-      }
-    }
      
     stage('Build') {
       steps {
