@@ -1,26 +1,6 @@
-pipeline {
-  agent any
-    
-  tools {nodejs 'nodejs'}
-    
-  stages {
-        
-    stage('Cloning Git') {
-      steps {
-        git 'git@github.com:arihant-sirpi/sample-nodejs.git'
-      }
-    }
-        
-    stage('Install dependencies') {
+stage('build') {
       steps {
         sh 'npm install'
-      }
-    }
-     
-    stage('Test') {
-      steps {
-         sh 'npm test'
-      }
-    }      
-  }
+        sh 'node app.js'
+}
 }
