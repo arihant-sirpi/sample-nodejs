@@ -5,7 +5,7 @@ pipeline {
         
     stage('Git') {
       steps {
-        git 'https://github.com/arihant-sirpi/sample-nodejs.git'
+        git 'git@github.com:arihant-sirpi/sample-nodejs.git'
       }
     }
      
