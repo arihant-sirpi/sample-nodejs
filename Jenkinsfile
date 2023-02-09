@@ -5,24 +5,22 @@ pipeline {
     
   stages {
         
-    stage('Git') {
+    stage('Cloning Git') {
       steps {
-        git 'https://github.com/arihant-sirpi/sample-nodejs.git'
+        git 'git@github.com:arihant-sirpi/sample-nodejs.git'
+      }
+    }
+        
+    stage('Install dependencies') {
+      steps {
+        sh 'npm install'
       }
     }
      
-    stage('Build') {
-      steps {
-        sh 'npm install'
-         sh '<<node app.js>>'
-      }
-    }  
-    
-            
     stage('Test') {
       steps {
-        sh 'node test'
+         sh 'npm test'
       }
-    }
+    }      
   }
 }
