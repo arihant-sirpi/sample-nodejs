@@ -13,13 +13,20 @@ pipeline {
         sh 'npm install'
          sh 'nohup npm start'
       }
-     }    
+     }
+    
+    stage('Ok') {
+        steps {
+            echo "Ok"
+        }
+    }
      post {
         always {
             emailext body: 'terdalarihant@gmail.com', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
 }
  }
-   stage('Test') {
+   
+stage('Test') {
       steps {
         sh 'node test'
       }
