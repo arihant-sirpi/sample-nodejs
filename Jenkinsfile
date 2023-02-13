@@ -5,7 +5,7 @@ pipeline {
 
     stage('pull') {
       steps {   
-        git 'https://github.com/arihant-sirpi/sample-nodejs.git'
+        git branch: 'main', credentialsId: 'at', url: 'git@github.com:arihant-sirpi/sample-nodejs.git'
       }
      }
     stage('Build') {
