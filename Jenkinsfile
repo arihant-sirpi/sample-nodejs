@@ -14,6 +14,10 @@ pipeline {
          sh 'nohup npm start'
       }
      }    
+     post {
+        always {
+            emailext body: 'terdalarihant@gmail.com', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+
     stage('Test') {
       steps {
         sh 'node test'
