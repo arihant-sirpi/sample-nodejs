@@ -5,7 +5,7 @@ pipeline {
 
     stage('Pull_git') {
       steps {
-        git 'git@github.com:arihant-sirpi/sample-nodejs.git'
+        git 'https://github.com/arihant-sirpi/sample-nodejs.git'
       }
     }    
      
